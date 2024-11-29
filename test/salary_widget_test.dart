@@ -8,7 +8,7 @@ void main()
     await tester.pumpWidget(MaterialApp(home: HomePage(),));
     await tester.enterText(find.byKey(Key("hour_input")), "10");
     await tester.tap(find.byKey(Key("calculate_button")));
-    await tester.pump();
+    await tester.pumpAndSettle();
 
     expect(find.text("5000"), findsOneWidget);
   });
